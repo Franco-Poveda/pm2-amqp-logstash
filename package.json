@@ -1,0 +1,29 @@
+{
+  "name": "pm2-amqp-logstash",
+  "version": "0.0.1",
+  "description": "Forward PM2 logs via a AMQP stream ready for Logstash",
+  "main": "app.js",
+  "dependencies": {
+    "pm2": "^2.0.18",
+    "pmx": "^0.6.8",
+    "bunyan": "^1.8.9",
+    "bunyan-logstash-amqp": "^1.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Franco-Poveda/pm2-amqp-logstash.git"
+  },
+  "config": {
+    "exchange": "logs",
+    "routingKey": "test"
+  },
+  "apps": [
+    {
+      "merge_logs": true,
+      "max_memory_restart": "150M",
+      "script": "app.js"
+    }
+  ],
+  "author": "Franco Poveda [at] Olpays.com",
+  "license": "MIT"
+}
