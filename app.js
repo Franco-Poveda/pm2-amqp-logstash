@@ -28,9 +28,9 @@ pmx.initModule({
 }, function (err, conf) {
 
   var amqp_stream = require('bunyan-logstash-amqp').createStream({
-    host: "192.168.99.100",
+    host: conf.host,
     exchange: {
-      name: 'logs',
+      name: conf.exchange,
       routingKey: 'test'
     }
   })
