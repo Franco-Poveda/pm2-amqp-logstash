@@ -14,7 +14,7 @@ PM2 module that forwards pm2 logs via a AMQP stream. Messages payload ready for 
 #### How to set this value ?
 
  After having installed the module you have to type :
-`pm2 set pm2-logmatic:exchange [exchange]` or go to the Keymetrics dashboard.
+`pm2 set pm2-amqp-logstash:exchange [exchange]` or go to the Keymetrics dashboard.
 
 ## Uninstall
 
