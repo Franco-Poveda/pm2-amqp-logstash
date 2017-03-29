@@ -1,6 +1,6 @@
 {
   "name": "pm2-amqp-logstash",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Forward PM2 logs via a AMQP stream ready for Logstash",
   "main": "app.js",
   "dependencies": {
@@ -20,7 +20,6 @@
     "amqpPasswd": "guest",
     "amqpExchange": "test",
     "amqpRoutingKey": "test",
-
     "logLevel": "debug",
     "logName": "log-stream"
   },
