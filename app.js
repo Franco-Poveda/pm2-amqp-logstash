@@ -32,24 +32,34 @@ pmx.initModule({
     login: conf.amqpUser,
     password: conf.amqpPasswd
   })
-    .on('connect', () => console.log("Connected to amqp [module]"))
-    .on('close', () => console.log("Closed connection to amqp"))
+    .on('connect', () => console.log('Connected to amqp [module]'))
+    .on('close', () => console.log('Closed connection to amqp'))
     .on('error', console.log);
 
   const log = bunyan.createLogger({
     name: conf.logName,
     streams: [{
       level: conf.logLevel,
-      type: "raw",
+      type: 'raw',
       stream: amqpStream
     }],
     level: conf.logLevel
   });
 
-  pm2.connect(() => {
+  pm2.connect((err) => {
+    if (err) {
+        console.log('error', err);
+        return;
+    }
+
     console.log('info', 'PM2: forwarding to amqp');
 
     pm2.launchBus((err, bus) => {
+      if (err) {
+          console.log('error', err);
+          return;
+      }
+
       bus.on('log:PM2', function (packet) {
         log.debug(packet.data);
       });
