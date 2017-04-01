@@ -4,8 +4,8 @@
   "description": "Forward PM2 logs via a AMQP stream ready for Logstash",
   "main": "app.js",
   "dependencies": {
-    "pm2": "^2.0.18",
-    "pmx": "^0.6.8",
+    "pm2": "^2.4.3",
+    "pmx": "^1.1.0",
     "bunyan": "^1.8.9",
     "bunyan-logstash-amqp": "^1.0.7"
   },
