@@ -27,7 +27,10 @@ pmx.initModule({
     vhost: conf.amqpVhost || 'sandbox',
     exchange: {
       name: conf.amqpExchange,
-      routingKey: conf.amqpRoutingKey
+      routingKey: conf.amqpRoutingKey,
+      properties: {
+        durable: conf.amqpDurable
+      }
     },
     login: conf.amqpUser,
     password: conf.amqpPasswd

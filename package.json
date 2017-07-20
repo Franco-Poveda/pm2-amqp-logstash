@@ -20,6 +20,7 @@
     "amqpPasswd": "guest",
     "amqpExchange": "test",
     "amqpRoutingKey": "test",
+    "amqpDurable": true,
     "logLevel": "debug",
     "logName": "log-stream"
   },
